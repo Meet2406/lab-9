@@ -26,14 +26,23 @@ label_name = ttk.Entry(frame_input, text="Pokemon Name")
 label_name.grid(row=0, column=0, padx=(10,5), pady=(10,))
 
 enter_name = ttk.Entry(frame_input)
-enter_name.insert(0,'mew')
+enter_name.insert(0,'Charmander')
 enter_name.grid(row=0,column=1)
 
-def handle_button_get_info():
-  poke_name = enter_name.get().strip()
 
-# TODO: Populate the user input frame with widgets
 
 # TODO: Define button click event handler function
+def handle_button_get_info():
+  poke_name = enter_name.get().strip()
+  poke_st_data = {
+    'name': 'Charmander',
+    'types': ['Fire']
+  }
+
+# Populate the user input frame with widgets
+
+info_btn= ttk.Button(frame_input, text="Get Info", command=handle_button_get_info)
+info_btn.grid(row=0, column=2, padx=15, pady=15)
+
 
 root.mainloop()
